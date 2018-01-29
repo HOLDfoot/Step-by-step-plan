@@ -7,10 +7,7 @@ import sys
 import commands
 
 AVOID_DIR = ("build", ".externalNativeBuild", "libs")
-#AVOID_FILE = ("")
 CONTAINS_FILE = ("java", "xml", "c", "cpp", "gradle", "txt", "mk")
-
-line_count = 0;
 
 if (len(sys.argv) != 2):
     print ("arguments is ", str(sys.argv))
@@ -18,9 +15,9 @@ if (len(sys.argv) != 2):
     exit()
 
 search_content = sys.argv[1]
-print ("find content: " + search_content)
-print ("find not in dirs: ", AVOID_DIR)
-print ("find in file's extensions: ", CONTAINS_FILE)
+print ("find content:", search_content)
+print ("find not in dirs:", AVOID_DIR)
+print ("find in file's extensions:", CONTAINS_FILE)
 
 def should_grep(extend):
     if CONTAINS_FILE.__contains__(extend):
@@ -35,7 +32,6 @@ def find_file (path, content):
                 find_file(child, content)
             else:
 		pass
-                # print ("ignore dir: ", parent)
         else:
             search_file(child, content)
             pass
