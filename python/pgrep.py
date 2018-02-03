@@ -51,7 +51,7 @@ def search_file(file, content):
     len_cwd = len(cwd) + 1
     len_file = len(file)
     sub_file = str(file)[len_cwd: len_file]
-    reg_grep = "grep " + content + " " + sub_file + " -irn"
+    reg_grep = "grep '" + content + "' " + sub_file + " -irn"
     tuple_grep = commands.getstatusoutput(reg_grep)
     output = tuple_grep[1]
     strs = output.split(content)
