@@ -6,7 +6,7 @@ import os
 import sys
 import commands
 
-AVOID_DIR = ("build", ".externalNativeBuild", "libs")
+AVOID_DIR = ("build", "libs", ".externalNativeBuild", ".git", ".gradle", ".idea", ".settings")
 CONTAINS_FILE = ("java", "xml", "c", "cpp", "gradle", "txt", "mk")
 
 if (len(sys.argv) != 2):
